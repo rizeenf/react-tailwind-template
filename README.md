@@ -1,73 +1,99 @@
-# React + TypeScript + Vite
+# React + Vite + Tailwind Template (pnpm)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a modern React starter template powered by **Vite**, styled with **Tailwind CSS**, and using **pnpm** as the package manager.  
+It is designed to be lightweight, fast, and ready to use out of the box.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## React Compiler
+- ⚡ Vite — extremely fast dev environment & build
+- 🎨 Tailwind CSS — utility-first CSS framework
+- 📦 pnpm — fast, disk-efficient package manager
+- 🔥 React 19.2.1
+- 🧩 Zero config required
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 📦 Installation
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### 1. Clone the repository
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+```bash
+git clone https://github.com/rizeenf/react-tailwind-template my-app
+cd my-app
+````
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### 2. Install dependencies
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+pnpm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 3. Start the development server
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+pnpm dev
 ```
+
+Your app will be available at:
+
+```
+http://localhost:5173
+```
+
+---
+
+## 🧪 Build for Production
+
+```bash
+pnpm build
+```
+
+Production output will be in:
+
+```
+dist/
+```
+
+Preview the production build:
+
+```bash
+pnpm preview
+```
+
+---
+
+## 📁 Project Structure
+
+```
+my-app/
+│── index.html
+│── package.json
+│── tailwind.config.js
+│── postcss.config.js
+│── vite.config.js
+│
+├── src/
+│   ├── main.jsx
+│   ├── App.jsx
+│   ├── index.css
+│   └── assets/
+│
+└── public/
+```
+
+---
+
+## 🎨 Tailwind Directives
+
+`src/index.css` contains the required Tailwind layers:
+
+```css
+@import "tailwindcss";
+```
+---
+
+## 📄 License
+
+MIT License
